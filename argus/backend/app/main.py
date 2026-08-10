@@ -1,9 +1,18 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app import config
+from app.database import init_db
 
-app = FastAPI(title="Argus")
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    init_db()
+    yield
+
+
+app = FastAPI(title="Argus", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
