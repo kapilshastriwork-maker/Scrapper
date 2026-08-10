@@ -28,3 +28,11 @@ To swap locally:
 mv index.html index-before.html
 mv index-redesigned.html index.html
 ```
+
+## Test layouts
+
+Three additional standalone pages for the same product (Argus Phone X1, ₹24,999, In Stock), each a believable but genuinely different real-world DOM structure — not just renamed classes. Swap one into `index.html` at a time to test the collector's extraction and heal flow against distinct site structures:
+
+- `layout-a.html` — modern minimal store: CSS-gradient hero image, `<span class="price">`, `<span class="availability">`, non-functional "Add to Cart" button.
+- `layout-b.html` — marketplace listing (Amazon/Flipkart-style): fake breadcrumb, ratings row, MRP strikethrough (₹29,999) + "17% off" badge, deeply nested price block (`<div class="a-price"><span class="a-price-whole">24,999</span></div>`-style), stock as colored text near the price.
+- `layout-c.html` — minimalist DTC brand: price with currency as a suffix ("24,999 INR", no symbol prefix) and stock expressed as a sentence (`<p class="fulfillment-note">Ships within 2 business days — item in stock</p>`) instead of a short status string.

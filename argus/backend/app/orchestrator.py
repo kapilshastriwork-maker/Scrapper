@@ -17,6 +17,7 @@ HEAL_ENDPOINT = (
 )
 PHONE_PRICE_FLOOR = 1000.0
 HEAL_PROMPT_LIMIT = 1000
+HEAL_IN_PROGRESS_PHRASE = "refactor job is still in progress"
 
 
 def _get_collector(collector_id: str) -> Collector | None:
@@ -158,16 +159,27 @@ async def trigger_heal(
     # TODO(verify): endpoint path and request body field name ("prompt" vs
     # "instructions") are unconfirmed; check docs.brightdata.com before live use.
     endpoint = HEAL_ENDPOINT.format(collector_id=collector.brightdata_collector_id)
-    response = await brightdata_client._request(
-        "POST", endpoint, json={"prompt": prompt}
-    )
+    try:
+        response = await brightdata_client._request(
+            "POST", endpoint, json={"prompt": prompt}
+        )
+        heal_status = "pending"
+    except brightdata_client.BrightDataAPIError as exc:
+        if (
+            exc.status_code == 409
+            and HEAL_IN_PROGRESS_PHRASE in (exc.body or "").lower()
+        ):
+            response = {"status_code": exc.status_code, "body": exc.body}
+            heal_status = "heal_already_in_progress"
+        else:
+            raise
 
     heal_event = HealEvent(
         collector_id=collector.id,
         detected_at=datetime.utcnow(),
         issue_description="; ".join(issues),
         heal_prompt=prompt,
-        status="pending",
+        status=heal_status,
         diff_summary=json.dumps(response),
     )
 
