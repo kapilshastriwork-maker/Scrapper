@@ -105,6 +105,7 @@ def extract_result_fields(result: dict) -> dict:
         "original_price": normalize_price(result.get("original_price")),
         "stock_status": result.get("stock_status"),
         "url": result.get("url") or input_data.get("url"),
+        "reviews": result.get("reviews"),
     }
 
 

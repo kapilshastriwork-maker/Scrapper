@@ -13,6 +13,7 @@ BRIGHTDATA_COLLECTORS = {
     "flipkart": os.getenv("BRIGHTDATA_COLLECTOR_FLIPKART", ""),
     "croma": os.getenv("BRIGHTDATA_COLLECTOR_CROMA", ""),
     "demo": os.getenv("BRIGHTDATA_COLLECTOR_DEMO", ""),
+    "amazon_review": os.getenv("BRIGHTDATA_COLLECTOR_AMAZON_REVIEW", ""),
 }
 
 SITE_URLS = {
@@ -22,4 +23,5 @@ SITE_URLS = {
     "demo": os.getenv(
         "SITE_URL_DEMO", "https://kapilshastriwork-maker.github.io/Scrapper/"
     ),
+    "amazon_review": os.getenv("SITE_URL_AMAZON_REVIEW", "https://www.amazon.in/"),
 }

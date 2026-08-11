@@ -53,6 +53,40 @@
     font-weight: 600;
     color: #067d62;
   }
+  .customer-reviews {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #e7e7e7;
+  }
+  .customer-reviews h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .review-list { list-style: none; }
+  .review-entry {
+    padding: 12px 0;
+    border-top: 1px solid #f3f3f3;
+  }
+  .review-entry:first-of-type { border-top: none; }
+  .user-name {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .user-rating {
+    display: block;
+    color: #ffa41c;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .review-copy {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #565959;
+  }
 </style>
 </head>
 <body>
@@ -78,6 +112,26 @@
         <span class="discount-badge">17% off</span>
       </div>
       <p class="stock-availability">In Stock</p>
+      <section class="customer-reviews" id="reviews-section">
+        <h2>Top reviews</h2>
+        <ul class="review-list">
+          <li class="review-entry" itemprop="review" itemscope itemtype="https://schema.org/Review">
+            <span class="user-name" itemprop="author">Rohit Verma</span>
+            <span class="user-rating" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <p class="review-copy" itemprop="reviewBody">Excellent phone for the price. The AMOLED display is vivid and the 50MP camera takes sharp photos.</p>
+          </li>
+          <li class="review-entry" itemprop="review" itemscope itemtype="https://schema.org/Review">
+            <span class="user-name" itemprop="author">Meera Pillai</span>
+            <span class="user-rating" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <p class="review-copy" itemprop="reviewBody">Battery life is genuinely impressive. Easily lasts me through a full day of heavy use.</p>
+          </li>
+          <li class="review-entry" itemprop="review" itemscope itemtype="https://schema.org/Review">
+            <span class="user-name" itemprop="author">Vikram Singh</span>
+            <span class="user-rating" aria-label="4 stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            <p class="review-copy" itemprop="reviewBody">Great phone overall, though a case and charger are not included. Would still recommend it.</p>
+          </li>
+        </ul>
+      </section>
     </div>
   </div>
 </body>

@@ -74,6 +74,45 @@
     line-height: 1.8;
     color: #6b6355;
   }
+  .community-voices {
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid #e4ddd2;
+    font-family: system-ui, sans-serif;
+  }
+  .community-voices h2 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6b6355;
+    margin-bottom: 18px;
+  }
+  .voices-table { width: 100%; border-collapse: collapse; }
+  .voices-table td {
+    padding: 16px 0;
+    border-top: 1px solid #efe8dc;
+    vertical-align: top;
+  }
+  .voices-table tr:first-child td { border-top: none; }
+  .name-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+    padding-right: 14px;
+    white-space: nowrap;
+  }
+  .score {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2f6b3c;
+    padding-right: 14px;
+    white-space: nowrap;
+  }
+  .message {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #6b6355;
+  }
 </style>
 </head>
 <body>
@@ -88,6 +127,28 @@
       <p>6.7&Prime; AMOLED display &middot; 50MP triple camera &middot; 128GB storage</p>
       <p>Free shipping over &#8377;5,000 &middot; 1-year warranty included</p>
     </div>
+    <section class="community-voices">
+      <h2>What owners say</h2>
+      <table class="voices-table">
+        <tbody>
+          <tr class="voice" data-rating="5">
+            <td class="name-label">Ishita Banerjee</td>
+            <td class="score">5/5</td>
+            <td class="message">Sharp display, dependable battery and a camera that punches well above its price bracket.</td>
+          </tr>
+          <tr class="voice" data-rating="5">
+            <td class="name-label">Karthik Menon</td>
+            <td class="score">5/5</td>
+            <td class="message">Has been my daily driver for a month now. Fast, fluid and surprisingly good in low light.</td>
+          </tr>
+          <tr class="voice" data-rating="4">
+            <td class="name-label">Divya Rao</td>
+            <td class="score">4/5</td>
+            <td class="message">Lovely phone, just remember to grab a charger separately since it is not bundled.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </div>
 </body>
 </html>

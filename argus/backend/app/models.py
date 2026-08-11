@@ -51,6 +51,7 @@ class ScrapeResult(Base):
     stock_status: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     url: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     raw_json: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    reviews: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     scraped_at: Mapped[datetime] = mapped_column(
         DateTime, default=datetime.utcnow, nullable=False
     )
@@ -73,6 +74,7 @@ class HealEvent(Base):
     heal_prompt: Mapped[str] = mapped_column(Text, nullable=False)
     status: Mapped[str] = mapped_column(String, default="pending", nullable=False)
     diff_summary: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    error_message: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     resolved_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
 
     collector: Mapped[Collector] = relationship(back_populates="heal_events")

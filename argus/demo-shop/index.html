@@ -74,6 +74,41 @@
     line-height: 1.8;
     color: #6b6355;
   }
+  .reviews {
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid #e4ddd2;
+    font-family: system-ui, sans-serif;
+  }
+  .reviews-heading {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6b6355;
+    margin-bottom: 18px;
+  }
+  .review-item {
+    padding: 16px 0;
+    border-top: 1px solid #efe8dc;
+  }
+  .review-item:first-of-type { border-top: none; }
+  .reviewer-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .review-rating {
+    color: #b8860b;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+  .review-text {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #6b6355;
+  }
 </style>
 </head>
 <body>
@@ -88,6 +123,24 @@
       <p>6.7&Prime; AMOLED display &middot; 50MP triple camera &middot; 128GB storage</p>
       <p>Free shipping over &#8377;5,000 &middot; 1-year warranty included</p>
     </div>
+    <section class="reviews">
+      <h2 class="reviews-heading">Customer reviews</h2>
+      <div class="review-item">
+        <div class="reviewer-name">Priya Sharma</div>
+        <div class="review-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">The display is stunning and the battery easily lasts a full day. Best phone I have owned at this price.</p>
+      </div>
+      <div class="review-item">
+        <div class="reviewer-name">Rahul Mehta</div>
+        <div class="review-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Camera quality surprised me in low light. Fast and smooth for daily use.</p>
+      </div>
+      <div class="review-item">
+        <div class="reviewer-name">Ananya Iyer</div>
+        <div class="review-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        <p class="review-text">Great phone overall, though I wish it came with a charger in the box. Delivery was quick.</p>
+      </div>
+    </section>
   </div>
 </body>
 </html>

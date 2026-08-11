@@ -7,6 +7,7 @@ COLLECTOR_DEFS = [
     {"id": "flipkart", "name": "Flipkart"},
     {"id": "croma", "name": "Croma"},
     {"id": "demo", "name": "Demo Shop"},
+    {"id": "amazon_review", "name": "Amazon (Reviews)"},
 ]
 
 
